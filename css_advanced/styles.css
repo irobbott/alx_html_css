@@ -45,7 +45,7 @@ ul {
 }
 
 header {
-        background: linear-gradient(rgba(7, 22, 41, 0.6), rgba(7, 22, 41, 0.6)), url('./image/background.png');
+        background: linear-gradient(rgba(7, 22, 41, 0.6), rgba(7, 22, 41, 0.6)), url('./image/Object.png');
         background-size: cover;
         background-position: center;
         padding-bottom: 80px;
