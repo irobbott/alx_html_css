@@ -1,0 +1,23 @@
+body {
+        background: #222;
+        color: #fff;
+}
+
+main {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+}
+
+aside {
+        flex: 1;
+        background: #222;
+}
+
+.alx-img {
+        background: #fff;
+}
+
+ul a {
+        color: #fff;
+}
