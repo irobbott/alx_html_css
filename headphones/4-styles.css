@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+:root {
+    --color-primary: #FF6565;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-dark-gray: #071629;
+    --color-medium-gray: #686868;
+
+    --font-family-primary: 'Source Sans Pro', sans-serif;
+    --font-family-title: 'Spin Cycle OT', 'Arial Black', sans-serif;
+    
+    --font-size-small: 16px;
+    --font-size-base: 18px;
+    --font-size-large: 24px;
+
+    --spacing-unit: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: var(--font-size-small);
+}
+
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.5;
+    color: var(--color-white);
+    background-color: var(--color-dark-gray);
+}
+
+a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.9;
+}
+
+h2 {
+    font-family: var(--font-family-primary);
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    width: auto;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    opacity: 0.8;
+}
+
+.hero-section {
+    position: relative;
+    padding-top: 2rem;
+    min-height: 100vh;
+    
+    background-image: url('images/headphones_hero_1.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    background-color: rgba(7, 22, 41, 0.7);
+    background-blend-mode: multiply;
+}
+
+.hero-section .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav .header-logo img {
+    height: auto;
+}
+
+.nav-menu {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+.nav-menu li {
+    padding: 10px 0;
+}
+
+.nav-menu a {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.menu-btn {
+    display: none;
+}
+
+.menu-icon {
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    display: block;
+}
+
+.navicon {
+    background: var(--color-white);
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
+}
+
+.navicon:before,
+.navicon:after {
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+    background: var(--color-white);
+}
+
+.navicon:before {
+    top: 5px;
+}
+
+.navicon:after {
+    top: -5px;
+}
+
+.menu-btn:checked ~ .nav-menu {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-dark-gray);
+    width: 100%;
+    height: 100vh;
+    padding-top: 100px;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.menu-btn:checked ~ .header-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2rem;
+}
+
+.hero-content {
+    text-align: center;
+    padding: 3rem 0; 
+    flex-grow: 1;
+}
+
+.hero-content h1 {
+    font-family: var(--font-family-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: var(--font-size-base);
+    margin-bottom: 2rem;
+}
+
+.hero-bottom-text {
+    text-align: center;
+    padding: 2rem 0 3rem 0;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Reusable Components */
+.section-header {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.section-header h2 {
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: var(--font-size-base);
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+}
+
+.col-4 {
+    width: 100%;
+}
+
+
+/* ----------------------------------
+    What We Do Section Styles
+---------------------------------- */
+
+.section-what-we-do {
+    padding: 5rem 0;
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.section-what-we-do .section-header h2 {
+    color: var(--color-black);
+}
+
+.section-what-we-do .section-header p {
+    color: var(--color-black);
+}
+
+.feature-item i {
+    color: var(--color-primary);
+    font-size: 96px; 
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.feature-item h3 {
+    font-size: var(--font-size-large);
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+    color: var(--color-medium-gray);
+    font-size: var(--font-size-small);
+}
+
+
+/* ----------------------------------
+    Our Results Section Styles
+---------------------------------- */
+
+.section-our-results {
+    padding: 5rem 0;
+    background-color: var(--color-dark-gray);
+}
+
+.result-item {
+    display: flex;
+    justify-content: center;
+}
+
+.pentagon {
+    position: relative;
+    width: 190px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background-image: url('images/pentagone.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pentagon h3 {
+    font-size: 46px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.pentagon p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+/* ----------------------------------
+    Contact Us Section Styles
+---------------------------------- */
+
+.section-contact-us {
+    padding: 5rem 0;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    text-align: center;
+}
+
+.section-contact-us h2 {
+    color: var(--color-black);
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--color-black);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 1px solid var(--color-black);
+    background-color: transparent;
+    font-size: var(--font-size-base);
+    color: var(--color-black);
+    transition: border-bottom 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-bottom: 1px solid var(--color-primary);
+}
+
+.contact-form .btn-primary {
+    margin-top: 2rem;
+    display: block;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ----------------------------------
+    Footer Styles
+---------------------------------- */
+
+.footer-section {
+    background-color: var(--color-dark-gray);
+    padding: 4rem 0 2rem 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.footer-logo {
+    margin-bottom: 2rem;
+}
+
+.social-icons a {
+    font-size: 28px; /* Size of the social media icon font */
+    margin: 0 10px;
+    color: var(--color-white);
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--color-primary); /* Hover effect on social icons */
+}
+
+.copyright {
+    font-size: 12px;
+    color: var(--color-medium-gray);
+}
+
+
+/* ----------------------------------
+    Desktop View (Media Query)
+---------------------------------- */
+
+@media screen and (min-width: 768px) {
+
+    .header-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .header-logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        justify-content: flex-end;
+        gap: 2.5rem;
+        position: static;
+        background-color: transparent;
+        padding-top: 0;
+        height: auto;
+    }
+
+    .nav-menu li {
+        padding: 0;
+    }
+    
+    .nav-menu a {
+        font-weight: 400;
+        font-size: 13px;
+    }
+    
+    .menu-icon {
+        display: none;
+    }
+
+    .hero-content {
+        padding: 6rem 0; 
+    }
+    
+    .hero-content h1 {
+        font-size: 4rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .row {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .col-4 {
+        width: 25%;
+    }
+
+    /* Footer Desktop Layout */
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 0;
+    }
+
+    .footer-logo {
+        margin-bottom: 0;
+    }
+
+    .social-icons {
+        order: 3; /* Push icons to the right */
+    }
+
+    .copyright {
+        margin-top: 2rem;
+    }
+}
